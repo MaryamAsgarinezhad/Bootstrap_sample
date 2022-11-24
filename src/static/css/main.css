@@ -1,0 +1,10 @@
+@import "flight-options.css";
+
+body {
+    font-family: Shabnam sans-serif;
+}
+
+.clickable {
+    cursor: pointer;
+}
+

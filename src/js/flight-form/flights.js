@@ -1,0 +1,95 @@
+import {filterFlights} from "../const/flights";
+import {createElementFromHTML, insertAfter} from "../utils";
+import {selectInput} from "./event-listeners";
+import form from "./form";
+
+function createIdWithEvent(event) {
+    return `options-${event.target.id}`
+}
+
+
+export function renderAirportOption(parentId, item, type) {
+    const isActive = form[type] === item.id
+    return `
+        <li
+            class="
+                btn
+                list-group-item-action
+                list-group-item
+                d-flex
+                flex-row
+                align-items-center
+                justify-content-between
+                user-select-none
+                clickable
+                ${isActive ? 'active' : ''}
+            "
+            value-id="${item.id}"
+        >
+            <div>
+                <h5> ${item.airPortTitleSmall} </h5>
+                <span> ${item.airPortTitle} </span>
+            </div>
+            <div>
+                <h5> ${item.city} </h5>
+                <span> ${item.country} </span>
+            </div>
+        </li>
+    `
+}
+
+function createEmptyAlert() {
+    const htmlString = `
+        <div class="alert alert-danger mb-0" role="alert">
+            پروازی یافت نشد
+        </div>
+    `
+    return createElementFromHTML(htmlString)
+}
+
+export function renderOptionsNode(event, flights) {
+    const id = createIdWithEvent(event)
+    const type = id.split('-')[1]
+    const listGroupHtml = `
+        <ul id="${id}" class="flight-options-container list-group overflow-scroll border rounded-bottom position-absolute w-100"></ul>
+    `
+    const listGroupNode = createElementFromHTML(listGroupHtml)
+    flights.forEach(item => {
+        const itemString = renderAirportOption(id, item, type)
+        const newNode = createElementFromHTML(itemString)
+        // id: options-{type}-input: type will be 'from' or 'to' and we need to use from-input and to-input in dom
+        newNode.addEventListener('click', (e) => selectInput(e, type))
+        listGroupNode.appendChild(newNode)
+    })
+    return listGroupNode
+}
+
+function replaceSelectDialog(event, newNode) {
+    const querySelector = `#${createIdWithEvent(event)}`
+    const node = document.querySelector(querySelector)
+    if (!node) insertAfter(newNode, event.target)
+    else if (newNode.children.length) {
+        insertAfter(newNode, event.target)
+        node.remove()
+    } else {
+        node.innerHTML = createEmptyAlert().outerHTML
+    }
+}
+
+export function hideSelectDialogEventListener(event, querySelector) {
+    const node = document.querySelector(querySelector)
+    node?.classList.add('visually-hidden')
+}
+
+export function showSelectDialogEventListener(event, querySelector) {
+    const node = document.querySelector(querySelector)
+    if (node) node?.classList.remove('visually-hidden')
+    else selectInputOnInputEventListener(event)
+}
+
+export function selectInputOnInputEventListener(event) {
+    const value = event.target.value
+    const flights = filterFlights(value)
+    const newNode = renderOptionsNode(event, flights)
+    replaceSelectDialog(event, newNode)
+}
