@@ -1,5 +1,7 @@
 html,body {
 	height: 100%;
+	direction:rtl;
+	text-align:right;
 }
 
 body.my-login-page {
