@@ -1,7 +1,8 @@
+<!-- THIS PAGE LISTS OUT AVAILABLE FLIGHTS -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Filtered Flights</title>
+  <title>Availablity</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -39,7 +40,7 @@ $query_result = mysqli_query($conn,$select_query) or die(mysqli_error($conn));
 <div class="container-fluid">
   <div class="jumbotron jumbotron-fluid">
       <center>
-        <h2>Selected Flights</h2>       
+        <h2>Flights Availability</h2>       
       </center>
   </div>
 </div>
@@ -59,7 +60,8 @@ $query_result = mysqli_query($conn,$select_query) or die(mysqli_error($conn));
       </tr>
     </thead>
     <tbody>
-    	<tr>
+    	<?php while($row = mysqli_fetch_array($query_result)) { ?>
+      <tr>
         <td></td>
           <td><?php echo $row['Airline']; ?></td>
           <td><?php echo $row['DepartureTime']; ?></td>
@@ -74,6 +76,7 @@ $query_result = mysqli_query($conn,$select_query) or die(mysqli_error($conn));
           </form>
 
       </tr>
+  <?php } ?>
     </tbody>
   </table>
 </div>
