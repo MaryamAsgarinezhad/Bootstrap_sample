@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Booking Confirmation</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- BOOTSTRAP HEADERS-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="js/booking-info.js"></script>
+<!-- STLYE -->
+  <style type="text/css">
+  .form_edit{
+    width: 900px;
+    margin: auto;
+  }  
+ </style>
+</head>
+<body>
+<!-- CONFIRMATION FORM -->
+<div class="container form_edit" >
+  <h2>Confirm Your Booking</h2>
+
+  <p id=infoNumber></p>
+
+  <form action="confirm.php" method="post">
+    <div class="form-group">
+      <label>FirstName</label>
+      <input type="name" class="form-control"  placeholder="First Name" name="firstname" required = "true">
+    </div>
+    <div class="form-group">
+      <label>LastName</label>
+      <input type="name" class="form-control"  placeholder="Last Name" name="lastname" required = "true">
+    </div>
+    <div class="form-group">
+        <label>PassportNumber</label>
+        <input type="number" class="form-control"  placeholder="Passport Number" name="passportnumber" required = "true">
+    </div>
+    <button type="submit" onclick="getInfo();" class="btn btn-success">Confirm Booking</button> 
+  </form>
+</div>
+</body>
+</html>
