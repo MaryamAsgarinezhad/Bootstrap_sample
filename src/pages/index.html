@@ -8,6 +8,8 @@
     <script src="../static/js/bootstrap.bundle.min.js"></script>
     <link href="../static/css/font.css" rel="stylesheet">
     <link href="../static/css/main.css" rel="stylesheet">
+    <link href="../static/css/jalalidatepicker.min.css" rel="stylesheet"/>
+    <script src="../static/js/jalalidatepicker.min.js"></script>
 </head>
 <body>
 <nav></nav>
@@ -44,17 +46,46 @@
         سفارش بلیط
     </div>
     <div class="card-body">
-        <form class="d-flex flex-row">
-            <div class="w-50 mx-2">
-                <label for="from-input" class="form-label"> مبدا </label>
-                <div id="from-input-container" class="position-relative">
-                    <input id="from-input" class="form-select" type="text"/>
+        <form>
+            <div class="d-flex flex-row mt-3">
+                <div class="w-50 mx-2">
+                    <label for="from-input" class="form-label"> مبدا </label>
+                    <div id="from-input-container" class="position-relative">
+                        <input id="from-input" class="form-select" type="text"/>
+                    </div>
+                </div>
+                <div class="w-50 mx-2">
+                    <label for="to-input" class="form-label"> مقصد </label>
+                    <div id="to-input-container" class="position-relative">
+                        <input id="to-input" class="form-select" type="text"/>
+                    </div>
                 </div>
             </div>
-            <div class="w-50 mx-2">
-                <label for="to-input" class="form-label"> مقصد </label>
-                <div id="to-input-container" class="position-relative">
-                    <input id="to-input" class="form-select" type="text"/>
+            <div class="d-flex mt-3">
+                <div class="w-50 mx-2">
+                    <label for="ticket-type" class="form-label"> نوع بلیط </label>
+                    <select id="ticket-type" class="form-select" aria-label="Default select example">
+                        <option value="1">
+                            یک طرفه
+                        </option>
+                        <option value="2">
+                            دو طرفه
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="d-flex flex-row mt-3">
+                <div class="w-50 mx-2">
+                    <label for="start-time" class="form-label"> زمان و تاریخ رفت </label>
+                    <div class="position-relative">
+                        <input data-jdp id="start-time" class="form-control">
+                    </div>
+                </div>
+                <div id="return-time-container" class="w-50 mx-2 visually-hidden">
+                    <label for="return-time" class="form-label"> زمان و تاریخ بازگشت </label>
+                    <div class="position-relative">
+                        <input data-jdp id="return-time" class="form-control">
+                    </div>
                 </div>
             </div>
         </form>

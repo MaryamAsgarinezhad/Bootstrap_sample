@@ -1,21 +1,22 @@
-import {selectInputOnInputEventListener, hideSelectDialogEventListener, showSelectDialogEventListener} from "./index";
+import {airportSelectInputOnInputEventListener, hideSelectDialogEventListener, showSelectDialogEventListener} from "./index";
 import form from "./form";
-import {getFlightById} from "../const/flights";
+import {getAirportById} from "../const/airports";
+import {ticketTypeInputEventListener} from "./ticket-type";
 
-function getFlightIdFromEvent(event) {
+function getAirportIdFromEvent(event) {
     return event.target.getAttribute('value-id')
 }
 
-export function selectInput(event, type) {
-    const flightId = Number(getFlightIdFromEvent(event))
+export function airportSelectInput(event, type) {
+    const flightId = Number(getAirportIdFromEvent(event))
     if (!flightId) return
     event.target.parentElement.childNodes.forEach(item => {
         item?.classList?.remove('active')
     })
     event.target.classList.add('active')
-    const flight = getFlightById(flightId)
+    const flight = getAirportById(flightId)
     const input = document.querySelector(`#${type}-input`)
-    input.value = `${flight.country} - ${flight.city} - ${flight.airPortTitle}`
+    input.value = `${flight.country} - ${flight.city} - ${flight.title}`
     form[type] = flightId
 }
 
@@ -28,7 +29,7 @@ export const fromInput = {
             eventType: 'focus'
         },
         {
-            func: selectInputOnInputEventListener,
+            func: airportSelectInputOnInputEventListener,
             eventType: 'input'
         },
     ],
@@ -52,7 +53,7 @@ export const toInput = {
             eventType: 'focus'
         },
         {
-            func: selectInputOnInputEventListener,
+            func: airportSelectInputOnInputEventListener,
             eventType: 'input'
         },
     ],
@@ -65,4 +66,14 @@ export const toInput = {
         },
     ]
 
+}
+
+
+export const ticketType = {
+    '#ticket-type': [
+        {
+            func: ticketTypeInputEventListener,
+            eventType: 'input'
+        }
+    ]
 }
