@@ -12,6 +12,7 @@ function login() {
         if(obj != null){
             if(obj.password == password.value){
                 message.innerHTML = "ورود موفق";
+                localStorage.setItem('currentUser',email.value);
             }
             else{
                 event.preventDefault();

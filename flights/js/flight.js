@@ -58,7 +58,7 @@ const airports = [
   
     function myFunction() {
       //todo
-      localStorage.setItem('BookingFlight',element-1);
+      localStorage.setItem('BookingFlight',element);
       window.location.href = "bookpage.html";
     }
   
