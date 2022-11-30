@@ -5,6 +5,7 @@ function registerNewUser() {
     let email = document.getElementById('email');
     let password = document.getElementById('password');
     let passNO = document.getElementById('passNO');
+    let message = document.getElementById('message');
 
     if(!!name.value && !!email.value && !!password.value && !isNaN(passNO.value) && !isNaN(parseFloat(passNO.value))){
         let user = {
@@ -23,7 +24,7 @@ function registerNewUser() {
         console.log(localStorage.getItem(userName));
     }
     else{
-        console.log("error");
+        message.innerHTML = "تمام فیلدها را پر کنید";
     }
 
 }

@@ -3,6 +3,7 @@
 function login() {
     let email = document.getElementById('email');
     let password = document.getElementById('password');
+    let message = document.getElementById('comment');
 
     if(!!password.value && !!email.value){
         let str = localStorage.getItem(email.value);
@@ -10,21 +11,22 @@ function login() {
 
         if(obj != null){
             if(obj.password == password.value){
-                console.log("success");
+                message.innerHTML = "ورود موفق";
             }
             else{
                 event.preventDefault();
                 event.stopPropagation();
-                console.log("Incorrect password!");
+                message.innerHTML = "رمز عبور نادرست است";
             }
         }
         else{
             event.preventDefault();
             event.stopPropagation();
-            console.log("Incorrect username!");
+            message.innerHTML = "نام کاربری نادرست است";
+
         }
     }
     else{
-        console.log("Fill all fields!");
+        message.innerHTML = "تمام فیلد هارا پر کنید";
     }
 }
