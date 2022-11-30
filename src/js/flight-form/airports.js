@@ -1,6 +1,6 @@
-import {filterFlights} from "../const/flights";
+import {filterAirports} from "../const/airports";
 import {createElementFromHTML, insertAfter} from "../utils";
-import {selectInput} from "./event-listeners";
+import {airportSelectInput} from "./event-listeners";
 import form from "./form";
 
 function createIdWithEvent(event) {
@@ -27,8 +27,8 @@ export function renderAirportOption(parentId, item, type) {
             value-id="${item.id}"
         >
             <div>
-                <h5> ${item.airPortTitleSmall} </h5>
-                <span> ${item.airPortTitle} </span>
+                <h5> ${item.titleSmall} </h5>
+                <span> ${item.title} </span>
             </div>
             <div>
                 <h5> ${item.city} </h5>
@@ -51,14 +51,14 @@ export function renderOptionsNode(event, flights) {
     const id = createIdWithEvent(event)
     const type = id.split('-')[1]
     const listGroupHtml = `
-        <ul id="${id}" class="flight-options-container list-group overflow-scroll border rounded-bottom position-absolute w-100"></ul>
+        <ul id="${id}" class="airport-options-container list-group overflow-scroll border rounded-bottom position-absolute w-100"></ul>
     `
     const listGroupNode = createElementFromHTML(listGroupHtml)
     flights.forEach(item => {
         const itemString = renderAirportOption(id, item, type)
         const newNode = createElementFromHTML(itemString)
         // id: options-{type}-input: type will be 'from' or 'to' and we need to use from-input and to-input in dom
-        newNode.addEventListener('click', (e) => selectInput(e, type))
+        newNode.addEventListener('click', (e) => airportSelectInput(e, type))
         listGroupNode.appendChild(newNode)
     })
     return listGroupNode
@@ -84,12 +84,12 @@ export function hideSelectDialogEventListener(event, querySelector) {
 export function showSelectDialogEventListener(event, querySelector) {
     const node = document.querySelector(querySelector)
     if (node) node?.classList.remove('visually-hidden')
-    else selectInputOnInputEventListener(event)
+    else airportSelectInputOnInputEventListener(event)
 }
 
-export function selectInputOnInputEventListener(event) {
+export function airportSelectInputOnInputEventListener(event) {
     const value = event.target.value
-    const flights = filterFlights(value)
+    const flights = filterAirports(value)
     const newNode = renderOptionsNode(event, flights)
     replaceSelectDialog(event, newNode)
 }

@@ -1,7 +1,7 @@
-@import "flight-options.css";
+@import "airport-options.css";
 
 body {
-    font-family: Shabnam sans-serif;
+    font-family: Shabnam;
 }
 
 .clickable {
