@@ -32,7 +32,3 @@ function login() {
         test();
     }
 }
-
-function test(){
-    console.log(airports[0].city);
-}
