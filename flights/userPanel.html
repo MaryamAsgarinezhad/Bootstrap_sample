@@ -16,7 +16,10 @@
        background-size: cover;
     }
   </style>
+
 </head>
+
+
 
 <!-- <?php    
 //Check connection
@@ -38,7 +41,7 @@ $query_result = mysqli_query($conn,$select_query) or die(mysqli_error($conn));
 <div class="container-fluid">
   <div class="jumbotron jumbotron-fluid" id="s">
       <center>
-        <p>پروازهای موجود</p>       
+        <p>پروازهای خریداری شده</p>       
       </center>
   </div>
 </div>
@@ -53,8 +56,8 @@ $query_result = mysqli_query($conn,$select_query) or die(mysqli_error($conn));
         <th>مدت زمان</th>
         <th>رده پرواز</th>
         <th>قیمت</th>
-        <th>پیام سرویس</th>
-        <th>رزرو</th>
+        <th>تاریخ خرید</th>
+        <th>نام مسافر</th>
       </tr>
     </thead>
     <tbody>
@@ -78,7 +81,7 @@ $query_result = mysqli_query($conn,$select_query) or die(mysqli_error($conn));
     </tbody>
   </table>
 </div>
-<script src="js/flight.js"></script>
+<script src="js/userPanel.js"></script>
 </body>
 
 </html>

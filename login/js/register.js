@@ -1,5 +1,5 @@
 'use strict';
-
+localStorage.clear;
 function registerNewUser() {
     let name = document.getElementById('name');
     let email = document.getElementById('email');
@@ -13,7 +13,7 @@ function registerNewUser() {
             email : email.value ,
             passNO : passNO.value ,
             password : password.value , 
-            tickets : ""
+            tickets : "",
         };
     
         let userJson = JSON.stringify(user);

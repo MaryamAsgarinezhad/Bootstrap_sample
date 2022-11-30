@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="js/booking-info.js"></script>
   <style type="text/css">
   .form_edit{
     width: 900px;
@@ -27,11 +26,12 @@
 <body>
 <!-- CONFIRMATION FORM -->
 <div class="container form_edit" >
-  <h2>تایید خرید</h2>
+  <p style="font-size: 25px;" id="depart"></p>
+  <p style="font-size: 40px;" id="Airline"></p>
 
   <h4 id=infoNumber>ورود اطلاعات مسافر 1:</h4>
 
-  <form action="confirm.php" method="post"> 
+  <form action="userPanel.html" method="dialog"> 
     <div class="form-group">
       <label>نام</label>
       <input type="name" class="form-control"  placeholder="نام" id="firstname" name="firstname" required = "true">
@@ -47,5 +47,6 @@
     <button type="submit" onclick="getInfo();" class="btn btn-success">تایید رزرو</button> 
   </form>
 </div>
+<script src="js/booking-info.js"></script>
 </body>
 </html>
