@@ -16,7 +16,10 @@
        background-size: cover;
     }
   </style>
+
 </head>
+
+
 
 <!-- <?php    
 //Check connection
@@ -53,8 +56,8 @@ $query_result = mysqli_query($conn,$select_query) or die(mysqli_error($conn));
         <th>مدت زمان</th>
         <th>رده پرواز</th>
         <th>قیمت</th>
-        <th>پیام سرویس</th>
-        <th>رزرو</th>
+        <th>تاریخ خرید</th>
+        <th>نام مسافر</th>
       </tr>
     </thead>
     <tbody>
@@ -78,7 +81,30 @@ $query_result = mysqli_query($conn,$select_query) or die(mysqli_error($conn));
     </tbody>
   </table>
 </div>
-<script src="js/flight.js"></script>
+
+<script>
+  let table = document.getElementsByTagName('table')[0];
+
+  for (i=0 ; i<3 ; i++){
+  let newRow = table.insertRow(1);
+  newRow.align = "center";
+
+  let cell1 = newRow.insertCell(0);
+  let cell2 = newRow.insertCell(1);
+  let cell3 = newRow.insertCell(2);
+  let cell4 = newRow.insertCell(3);
+  let cell5 = newRow.insertCell(4);
+  let cell6 = newRow.insertCell(5);
+  let cell7 = newRow.insertCell(6);
+  let cell8 = newRow.insertCell(7);
+
+  //todo
+  cell1.innerHTML = "salam";
+  cell5.innerHTML = "ghgh";
+  }
+
+</script>
+
 </body>
 
 </html>
