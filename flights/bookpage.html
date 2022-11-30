@@ -19,7 +19,9 @@
       background-image: url("imgs/c.jpg");
       background-repeat: no-repeat;
       background-size: cover;
-      color: rgb(233, 78, 6);
+      color: rgb(0, 0, 0);
+      direction:rtl;
+	    text-align:right;
   }
 
  </style>
@@ -27,24 +29,24 @@
 <body>
 <!-- CONFIRMATION FORM -->
 <div class="container form_edit" >
-  <h2>Confirm Your Booking</h2>
+  <h2>تایید خرید</h2>
 
-  <h4 id=infoNumber>Enter information for passenger 1</h4>
+  <h4 id=infoNumber>ورود اطلاعات مسافر 1:</h4>
 
   <form action="confirm.php" method="post"> 
     <div class="form-group">
-      <label>FirstName</label>
-      <input type="name" class="form-control"  placeholder="First Name" id="firstname" name="firstname" required = "true">
+      <label>نام</label>
+      <input type="name" class="form-control"  placeholder="نام" id="firstname" name="firstname" required = "true">
     </div>
     <div class="form-group">
-      <label>LastName</label>
-      <input type="name" class="form-control"  placeholder="Last Name" id="lastname" name="lastname" required = "true">
+      <label>نام‌خانوادگی</label>
+      <input type="name" class="form-control"  placeholder="نام‌خانوادگی" id="lastname" name="lastname" required = "true">
     </div>
     <div class="form-group">
-        <label>PassportNumber</label>
-        <input type="number" class="form-control"  placeholder="Passport Number" id="passportnumber" name="passportnumber" required = "true">
+        <label>شماره پاسپورت</label>
+        <input type="number" class="form-control"  placeholder="شماره پاسپورت" id="passportnumber" name="passportnumber" required = "true">
     </div>
-    <button type="submit" onclick="getInfo();" class="btn btn-success">Confirm Booking</button> 
+    <button type="submit" onclick="getInfo();" class="btn btn-success">تایید رزرو</button> 
   </form>
 </div>
 </body>

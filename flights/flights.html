@@ -8,90 +8,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+  <link rel="stylesheet" type="text/css" href="css/flights.css">
   <style>
-  	.container{
-  		margin-top: 3em;
-  	}
-
-    body{
-      background-image: url("imgs/b.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
+     body{
+       background-image: url("imgs/b.jpg");
+       background-repeat: no-repeat;
+       background-size: cover;
     }
-
-    th{
-      text-align: center;
-      background-color: #536a85;
-      color: #ffffff;
-    }
-
-    .container-fluid{
-      margin-top: 0.5cm;
-      margin-left: 12cm;
-      margin-right: 12cm;
-      height: 2cm;
-      background-color: #536a85;
-    }
-
-    #s{
-      background-color: #f3f3f3c4;
-      height: 0.5cm;
-      margin-top: 0.3cm;
-    }
-
-    p{
-      margin-top: 0mm;
-      font-family: sans-serif;
-      font-size: x-large;
-    }
-
-    table{
-      border-collapse: collapse;
-      margin: 25px 0;
-      font-size: 0.9em;
-      font-family: sans-serif;
-      min-width: 400px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-      padding: 12px 15px;
-      background-color:rgba(0, 0, 0, 0);
-      /* direction:rtl;
-	    text-align:right; */
-    }
-
-    td{
-      border-bottom: 1px solid #dddddd;
-      background-color: #f3f3f381;
-      border-bottom: 2px solid #536a85;
-    }
-
-    button {
-      background-color: #e1ecf4;
-      border-radius: 3px;
-      border: 1px solid #7aa7c7;
-      box-shadow: rgba(255, 255, 255, .7) 0 1px 0 0 inset;
-      box-sizing: border-box;
-      color: #39739d;
-      cursor: pointer;
-      display: inline-block;
-      font-family: -apple-system,system-ui,"Segoe UI","Liberation Sans",sans-serif;
-      font-size: 13px;
-      font-weight: 400;
-      line-height: 1.15385;
-      margin: 0;
-      outline: none;
-      padding: 8px .8em;
-      position: relative;
-      text-align: center;
-      text-decoration: none;
-      user-select: none;
-      -webkit-user-select: none;
-      touch-action: manipulation;
-      vertical-align: baseline;
-      white-space: nowrap;
-      width: 100%;
-    }
-
   </style>
 
 </head>
@@ -118,23 +41,23 @@ $query_result = mysqli_query($conn,$select_query) or die(mysqli_error($conn));
 <div class="container-fluid">
   <div class="jumbotron jumbotron-fluid" id="s">
       <center>
-        <p>Flights Availability</p>       
+        <p>پروازهای موجود</p>       
       </center>
   </div>
 </div>
     
 <div class="container">
-  <table class="table" id="flightTable" border="1">
+  <table class="table" id="flightTable" dir="rtl" border="1">
     <thead>
       <tr>
-        <th>AirLine</th>
-        <th>Departure</th>
-        <th>Arrival</th>
-        <th>Duration</th>
-        <th>Class</th>
-        <th>Price</th>
-        <th>Alert</th>
-        <th>#</th>
+        <th>ایرلاین</th>
+        <th>ساعت پرواز</th>
+        <th>ساعت رسیدن</th>
+        <th>مدت زمان</th>
+        <th>رده پرواز</th>
+        <th>قیمت</th>
+        <th>پیام سرویس</th>
+        <th>رزرو</th>
       </tr>
     </thead>
     <tbody>
@@ -181,7 +104,7 @@ $query_result = mysqli_query($conn,$select_query) or die(mysqli_error($conn));
 
   let btn = document.createElement('Button');
   btn.id = i;
-  btn.textContent = "Buy";
+  btn.textContent = "خرید";
   btn.onclick = myFunction;
 
   function myFunction() {
