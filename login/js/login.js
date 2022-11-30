@@ -27,6 +27,11 @@ function login() {
         }
     }
     else{
-        message.innerHTML = "تمام فیلد هارا پر کنید";
+        message.innerHTML = "تمام فیلدها را پر کنید";
+        test();
     }
+}
+
+function test(){
+    console.log(airports[0].city);
 }
