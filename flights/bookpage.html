@@ -14,6 +14,14 @@
     width: 900px;
     margin: auto;
   }  
+
+  body{
+      background-image: url("imgs/c.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: rgb(233, 78, 6);
+  }
+
  </style>
 </head>
 <body>
@@ -21,20 +29,20 @@
 <div class="container form_edit" >
   <h2>Confirm Your Booking</h2>
 
-  <p id=infoNumber></p>
+  <h4 id=infoNumber>Enter information for passenger 1</h4>
 
-  <form action="confirm.php" method="post">
+  <form action="confirm.php" method="post"> 
     <div class="form-group">
       <label>FirstName</label>
-      <input type="name" class="form-control"  placeholder="First Name" name="firstname" required = "true">
+      <input type="name" class="form-control"  placeholder="First Name" id="firstname" name="firstname" required = "true">
     </div>
     <div class="form-group">
       <label>LastName</label>
-      <input type="name" class="form-control"  placeholder="Last Name" name="lastname" required = "true">
+      <input type="name" class="form-control"  placeholder="Last Name" id="lastname" name="lastname" required = "true">
     </div>
     <div class="form-group">
         <label>PassportNumber</label>
-        <input type="number" class="form-control"  placeholder="Passport Number" name="passportnumber" required = "true">
+        <input type="number" class="form-control"  placeholder="Passport Number" id="passportnumber" name="passportnumber" required = "true">
     </div>
     <button type="submit" onclick="getInfo();" class="btn btn-success">Confirm Booking</button> 
   </form>
