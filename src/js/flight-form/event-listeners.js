@@ -1,7 +1,18 @@
-import {airportSelectInputOnInputEventListener, hideSelectDialogEventListener, showSelectDialogEventListener} from "./index";
+import {
+    airportSelectInputOnInputEventListener,
+    decreasePassengerCount,
+    hideSelectDialogEventListener,
+    increasePassengerCount,
+    passengerCountOnInput,
+    returnTimeOnInput,
+    showSelectDialogEventListener,
+    startTimeOnInput,
+    ticketTypeInputEventListener,
+} from "./index";
+
 import form from "./form";
+
 import {getAirportById} from "../const/airports";
-import {ticketTypeInputEventListener} from "./ticket-type";
 
 function getAirportIdFromEvent(event) {
     return event.target.getAttribute('value-id')
@@ -65,7 +76,21 @@ export const toInput = {
             eventType: 'clickOutside'
         },
     ]
+}
 
+export const flightTime = {
+    '#start-time': [
+        {
+            func: startTimeOnInput,
+            eventType: 'input'
+        }
+    ],
+    '#return-time': [
+        {
+            func: returnTimeOnInput,
+            eventType: 'input'
+        }
+    ]
 }
 
 
@@ -73,6 +98,28 @@ export const ticketType = {
     '#ticket-type': [
         {
             func: ticketTypeInputEventListener,
+            eventType: 'input'
+        }
+    ]
+}
+
+
+export const passengerCount = {
+    '#increase-passenger-count': [
+        {
+            func: increasePassengerCount,
+            eventType: 'click'
+        }
+    ],
+    '#decrease-passenger-count': [
+        {
+            func: decreasePassengerCount,
+            eventType: 'click'
+        }
+    ],
+    '#passenger-count': [
+        {
+            func: passengerCountOnInput,
             eventType: 'input'
         }
     ]

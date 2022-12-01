@@ -78,14 +78,26 @@
                 <div class="w-50 mx-2">
                     <label for="start-time" class="form-label"> زمان و تاریخ رفت </label>
                     <div class="position-relative">
-                        <input data-jdp id="start-time" class="form-control">
+                        <input data-jdp id="start-time" class="form-control ltr text-start">
                     </div>
                 </div>
                 <div id="return-time-container" class="w-50 mx-2 visually-hidden">
                     <label for="return-time" class="form-label"> زمان و تاریخ بازگشت </label>
                     <div class="position-relative">
-                        <input data-jdp id="return-time" class="form-control">
+                        <input data-jdp id="return-time" class="form-control ltr text-start">
                     </div>
+                </div>
+            </div>
+            <div class="d-flex flex-column mt-3">
+                <label for="passenger-count" class="form-label"> تعداد مسافران </label>
+                <div class="d-flex flex-row" style="width: 120px">
+                    <button type="button" id="increase-passenger-count"
+                            class="btn btn-primary btn-block rounded-0 rounded-start font-monospace">+
+                    </button>
+                    <input value="1" id="passenger-count" class="form-control rounded-0 text-center">
+                    <button type="button" id="decrease-passenger-count"
+                            class="btn btn-primary btn-block rounded-0 rounded-end font-monospace">-
+                    </button>
                 </div>
             </div>
         </form>

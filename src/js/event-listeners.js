@@ -1,7 +1,7 @@
-import {fromInput, ticketType, toInput} from "./flight-form/event-listeners";
+import {flightTime, fromInput, passengerCount, ticketType, toInput} from "./flight-form/event-listeners";
 
 // todo: add more event listeners
-const elEventMapper = {...fromInput, ...toInput, ...ticketType}
+const elEventMapper = {...fromInput, ...toInput, ...ticketType, ...flightTime, ...passengerCount}
 
 
 export default function addAllEventListeners() {

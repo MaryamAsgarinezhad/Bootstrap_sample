@@ -41,7 +41,7 @@ export function renderAirportOption(parentId, item, type) {
 function createEmptyAlert() {
     const htmlString = `
         <div class="alert alert-danger mb-0" role="alert">
-            پروازی یافت نشد
+            فرودگاهی یافت نشد
         </div>
     `
     return createElementFromHTML(htmlString)

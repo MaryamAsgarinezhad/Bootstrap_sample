@@ -6,6 +6,9 @@ const form = {
     from: undefined,
     to: undefined,
     ticketType: 1,
+    startTime: undefined,
+    returnTime: undefined,
+    passengerCount: 1,
 }
 
 // todo: remove this
