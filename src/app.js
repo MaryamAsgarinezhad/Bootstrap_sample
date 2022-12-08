@@ -5,7 +5,7 @@ addAllEventListeners()
 
 // start date pickers
 jalaliDatepicker.startWatch({
-    time: true,
+    // time: true,
     minDate: "attr",
     maxDate: "attr"
 });
