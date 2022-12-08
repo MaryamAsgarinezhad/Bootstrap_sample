@@ -5,13 +5,13 @@ html,body {
 }
 
 body.my-login-page {
-	background-color: #f7f9fb;
-	font-size: 14px;
+	background-color: #426d97;
+	font-size: 13px;
 }
 
 .my-login-page .brand {
-	width: 90px;
-	height: 90px;
+	width: 100px;
+	height: 100px;
 	overflow: hidden;
 	border-radius: 50%;
 	margin: 40px auto;
@@ -41,11 +41,11 @@ body.my-login-page {
 }
 
 .my-login-page .card.fat {
-	padding: 10px;
+	padding: 30px;
 }
 
 .my-login-page .card .card-title {
-	margin-bottom: 30px;
+	margin-bottom: 40px;
 }
 
 .my-login-page .form-control {
