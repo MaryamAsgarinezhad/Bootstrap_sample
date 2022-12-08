@@ -2,6 +2,8 @@
 // 1: one way
 // 2: two way
 
+import {getSubmitButtonEl} from "./submit-button";
+
 const form = {
     from: undefined,
     to: undefined,
@@ -11,7 +13,32 @@ const form = {
     passengerCount: 1,
 }
 
-// todo: remove this
-window.form = form
+function isFormValid() {
+    if (form.passengerCount && form.from && form.to && form.startTime && form.ticketType) {
+        if (form.ticketType === 2) {
+            return !!form.returnTime
+        }
+        return true
+    }
+    return false
+}
 
-export default form
+const formProxy = new Proxy(form, {
+    set(obj, prop, value) {
+        Reflect.set(...arguments)
+        const button = getSubmitButtonEl()
+        if (isFormValid()) {
+            button.classList.remove('btn-disabled')
+            button.removeAttribute('disabled')
+        } else {
+            button.classList.add('btn-disabled')
+            button.setAttribute('disabled', '')
+        }
+        return obj
+    }
+})
+
+// todo: remove this
+window.form = formProxy
+
+export default formProxy

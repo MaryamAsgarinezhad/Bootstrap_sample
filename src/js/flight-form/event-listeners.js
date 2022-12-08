@@ -13,6 +13,7 @@ import {
 import form from "./form";
 
 import {getAirportById} from "../const/airports";
+import {onSubmit} from "./submit-button";
 
 function getAirportIdFromEvent(event) {
     return event.target.getAttribute('value-id')
@@ -121,6 +122,16 @@ export const passengerCount = {
         {
             func: passengerCountOnInput,
             eventType: 'input'
+        }
+    ]
+}
+
+
+export const submitButton = {
+    '#submit-button': [
+        {
+            func: onSubmit,
+            eventType: 'click'
         }
     ]
 }
