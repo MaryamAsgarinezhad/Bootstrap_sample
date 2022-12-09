@@ -35,6 +35,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[1],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'اکونومی کلاس'
     },
     {
@@ -46,6 +47,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[1],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'فرست کلاس'
     },
     {
@@ -57,6 +59,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[2],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'اکونومی کلاس'
     },
     {
@@ -68,6 +71,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[19],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'اکونومی کلاس'
     },
     {
@@ -79,6 +83,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[17],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'بیزنس کلاس'
     },
     {
@@ -90,6 +95,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[17],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'بیزنس کلاس'
     },
     {
@@ -101,6 +107,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[2],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'بیزنس کلاس'
     },
     {
@@ -112,6 +119,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[17],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'بیزنس کلاس'
     },
     {
@@ -123,6 +131,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[3],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'فرست کلاس'
     },
     {
@@ -134,6 +143,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[19],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'فرست کلاس'
     },
     {
@@ -145,6 +155,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[3],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'فرست کلاس'
     },
     {
@@ -156,6 +167,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[3],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'اکونومی کلاس'
     },
     {
@@ -167,6 +179,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[2],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'اکونومی کلاس'
     },
     {
@@ -178,6 +191,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[4],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'بیزنس کلاس'
     },
     {
@@ -189,6 +203,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[13],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'اکونومی کلاس'
     },
     {
@@ -200,6 +215,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[17],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'فرست کلاس'
     },
     {
@@ -211,6 +227,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[10],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'بیزنس کلاس'
     },
     {
@@ -222,6 +239,7 @@ const flights = [
         arrivingDateAndTime: sampleDates[12],
         flightInterval: '۲ ساعت',
         price: 1000000,
+        capacity: 10,
         class: 'فرست کلاس'
     },
 ]

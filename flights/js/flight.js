@@ -23,6 +23,15 @@
     cell5.innerHTML = element.class;
     cell6.innerHTML = element.price;
 
+    let alert;
+    let passNum = JSON.parse(localStorage.getItem('submittedForm')).passengerCount;
+    if(element.capacity < 3*passNum){
+      cell7.innerHTML = "ظرفیت محدود است"
+    }
+    else{
+      cell7.innerHTML = "--------------"
+    }
+
   
     let btn = document.createElement('Button');
     btn.id = i;

@@ -48,7 +48,7 @@ function book(str){
 
 let finalStr = "";
 function getInfo(){
-    let passNum = JSON.parse(localStorage.getItem('submittedForm'));
+    let passNum = JSON.parse(localStorage.getItem('submittedForm')).passengerCount;
     if (num <= passNum+1){
         let firstname = document.getElementById('firstname').value;
         let lastname = document.getElementById('lastname').value;
@@ -57,26 +57,22 @@ function getInfo(){
 
         if(!!firstname && !!lastname && !isNaN(passportnumber) && !isNaN(parseFloat(passportnumber))){
             if(num==passNum+1){
-
                 finalStr += ","+firstname+"-"+lastname;
                 finalStr = new Date() + finalStr;
                 book(finalStr);
                 window.location.href = 'userPanel.html';
-                console.log9('did')
             }
             else{
                 event.preventDefault();
                 event.stopPropagation();
                 
                 document.getElementById('infoNumber').innerHTML ="ورود اطلاعات مسافر " +num+":";
-                console.log(1);
                 finalStr += ","+firstname+"-"+lastname;
             }
             
             num++;
         }
         else{
-            console.log(3);
             message.innerHTML = "تمام فیلدها را پر کنید";
         }
     }
