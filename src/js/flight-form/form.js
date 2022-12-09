@@ -38,7 +38,4 @@ const formProxy = new Proxy(form, {
     }
 })
 
-// todo: remove this
-window.form = formProxy
-
 export default formProxy

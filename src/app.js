@@ -20,9 +20,6 @@ if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     footer.classList.remove('bg-black')
 }
 
-const improvements =''
-console.log(improvment)
-
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
     const newColorScheme = event.matches ? ['dark', 'black'] : ['light', 'white'];
     const oldColorScheme = !event.matches ? ['dark', 'black'] : ['light', 'white'];
