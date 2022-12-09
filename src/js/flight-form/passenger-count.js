@@ -1,4 +1,5 @@
 import {isNumeric, perToEngDigits} from "../utils";
+import form from './form'
 
 function getPassengerCountInput() {
     return document.querySelector('#passenger-count')
