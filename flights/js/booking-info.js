@@ -48,7 +48,7 @@ function book(str){
 
 let finalStr = "";
 function getInfo(){
-    let passNum = +localStorage.getItem('CurrentPassengerNumber');
+    let passNum = JSON.parse(localStorage.getItem('submittedForm'));
     if (num <= passNum+1){
         let firstname = document.getElementById('firstname').value;
         let lastname = document.getElementById('lastname').value;
