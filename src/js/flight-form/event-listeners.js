@@ -15,17 +15,30 @@ import form from "./form";
 import {getAirportById} from "../const/airports";
 import {onSubmit} from "./submit-button";
 
-function getAirportIdFromEvent(event) {
-    return event.target.getAttribute('value-id')
+function getAirportTarget(event) {
+    let id
+    let target = event.target
+    let counter = 0
+    while (counter < 3) {
+        id = target.getAttribute('value-id')
+        if (!id) {
+            target = target.parentElement
+        } else {
+            return target
+        }
+    }
+    return null
 }
 
+
 export function airportSelectInput(event, type) {
-    const flightId = Number(getAirportIdFromEvent(event))
-    if (!flightId) return
-    event.target.parentElement.childNodes.forEach(item => {
+    const target = getAirportTarget(event)
+    if (!target) return;
+    const flightId = Number(target.getAttribute('value-id'))
+    target.parentElement.childNodes.forEach(item => {
         item?.classList?.remove('active')
     })
-    event.target.classList.add('active')
+    target.classList.add('active')
     const flight = getAirportById(flightId)
     const input = document.querySelector(`#${type}-input`)
     input.value = `${flight.country} - ${flight.city} - ${flight.title}`

@@ -1,0 +1,22 @@
+.commercial-absolute-text {
+    right: 5%;
+    top: 85%;
+}
+
+@media (max-width: 1200px) {
+    .commercial-absolute-text {
+        top: 80%;
+    }
+}
+
+@media (max-width: 800px) {
+    .commercial-absolute-text {
+        top: 77%;
+    }
+}
+
+@media (max-width: 500px) {
+    .commercial-absolute-text {
+        top: 75%;
+    }
+}

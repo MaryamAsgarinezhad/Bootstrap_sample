@@ -27,11 +27,11 @@ export function renderAirportOption(parentId, item, type) {
             value-id="${item.id}"
         >
             <div>
-                <h5> ${item.titleSmall} </h5>
+                <h6> ${item.titleSmall} </h6>
                 <span> ${item.title} </span>
             </div>
             <div>
-                <h5> ${item.city} </h5>
+                <h6> ${item.city} </h6>
                 <span> ${item.country} </span>
             </div>
         </li>
@@ -51,7 +51,7 @@ export function renderOptionsNode(event, flights) {
     const id = createIdWithEvent(event)
     const type = id.split('-')[1]
     const listGroupHtml = `
-        <ul id="${id}" class="airport-options-container list-group overflow-scroll border rounded-bottom position-absolute w-100"></ul>
+        <ul id="${id}" class="airport-options-container list-group overflow-scroll border-0 shadow rounded-bottom position-absolute w-100"></ul>
     `
     const listGroupNode = createElementFromHTML(listGroupHtml)
     flights.forEach(item => {
@@ -59,6 +59,9 @@ export function renderOptionsNode(event, flights) {
         const newNode = createElementFromHTML(itemString)
         // id: options-{type}-input: type will be 'from' or 'to' and we need to use from-input and to-input in dom
         newNode.addEventListener('click', (e) => airportSelectInput(e, type))
+        // newNode.childNodes.forEach(child => {
+        //     child.addEventListener('click', (e) => airportSelectInput(e, type))
+        // })
         listGroupNode.appendChild(newNode)
     })
     return listGroupNode

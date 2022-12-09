@@ -5,107 +5,155 @@
     <meta charset="UTF-8">
     <title>خانه</title>
     <link href="../static/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="../static/css/bootstrap-dark.min.css" rel="stylesheet">
+    <link href="../static/css/bootstrap-utilities.rtl.min.css" rel="stylesheet">
     <script src="../static/js/bootstrap.bundle.min.js"></script>
     <link href="../static/css/font.css" rel="stylesheet">
-    <link href="../static/css/main.css" rel="stylesheet">
     <link href="../static/css/jalalidatepicker.min.css" rel="stylesheet"/>
     <script src="../static/js/jalalidatepicker.min.js"></script>
+    <link href="../static/css/main.css" rel="stylesheet">
 </head>
-<body>
-<nav></nav>
-<!--<div class="card">-->
-<!--    <div class="card-header">-->
-<!--        <ul class="nav nav-pills nav-fill d-flex justify-content-center align-self-center">-->
-<!--            <li class="nav-item">-->
-<!--                <a class="w-100 nav-link active">-->
-<!--                    جست و جوی بلیط-->
-<!--                </a>-->
-<!--            </li>-->
-<!--            <li class="nav-item">-->
-<!--                <a class="w-100 nav-link">-->
-<!--                    پرواز-->
-<!--                </a>-->
-<!--            </li>-->
-<!--            <li class="nav-item">-->
-<!--                <a class="w-100 nav-link">-->
-<!--                    پرواز-->
-<!--                </a>-->
-<!--            </li>-->
-<!--            <li class="nav-item">-->
-<!--                <a class="w-100 nav-link">-->
-<!--                    پرواز-->
-<!--                </a>-->
-<!--            </li>-->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</div>-->
-
-
-<div class="card">
-    <div class="card-header">
-        سفارش بلیط
+<body class="bg-dark">
+<nav class="navbar navbar-expand bg-primary bg-opacity-75 shadow">
+    <div class="container-fluid">
+        <div class="d-flex flex-row justify-content-center align-items-center">
+            <h6 class="h6 m-0 mt-1 pe-2"> شرکت هوایی MPE </h6>
+            <img src="../../login/img/logo.jpg" class="rounded img-fluid" alt="logo" width="60px" height="60px">
+        </div>
+        <a class="btn btn-primary nav-item navbar-brand" href="../../login/index.html"> ثبت‌نام / ورود </a>
     </div>
-    <div class="card-body">
-        <form>
-            <div class="d-flex flex-row mt-3">
-                <div class="w-50 mx-2">
-                    <label for="from-input" class="form-label"> مبدا </label>
-                    <div id="from-input-container" class="position-relative">
-                        <input id="from-input" class="form-select" type="text"/>
+</nav>
+<div class="container mt-3">
+    <h3 class="h3"> پرواز‌هایی ایمن با ما </h3>
+    <span>
+        به کمک سرویس رزرو پرواز‌های هوایی ما
+        می‌توانید با خیالی آسوده پرواز‌های خود را برای سفر‌های تفریحی، کاری و زیارتی انتخاب کرده و آن‌ها را رزرو کنید.
+    </span>
+    <div class="d-flex align-items-center justify-content-center mt-2">
+        <img src="../../flights/imgs/flight.jpg" class="rounded img-fluid w-100 shadow-lg" alt="flight-image">
+    </div>
+    <div class="card mt-3 mt-md-5 shadow border-0 rounded-bottom rounded-3">
+        <h4 class="card-header bg-primary bg-opacity-25 border-0 rounded-3">
+            سفارش بلیط
+        </h4>
+        <div class="card-body">
+            <form class="d-flex flex-column">
+                <div>
+                    <div class="row justify-content-center">
+                        <div class="mt-1 col-11 col-md-6">
+                            <label for="from-input" class="form-label"> مبدا </label>
+                            <div id="from-input-container" class="position-relative">
+                                <input id="from-input" class="form-select" type="text"/>
+                            </div>
+                        </div>
+                        <div class="mt-3 mt-md-1 col-11 col-md-6">
+                            <label for="to-input" class="form-label"> مقصد </label>
+                            <div id="to-input-container" class="position-relative">
+                                <input id="to-input" class="form-select" type="text"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center justify-content-md-start mt-3">
+                        <div class="col-11 col-md-6">
+                            <label for="ticket-type" class="form-label"> نوع بلیط </label>
+                            <select id="ticket-type" class="form-select" aria-label="Default select example">
+                                <option value="1">
+                                    یک طرفه
+                                </option>
+                                <option value="2">
+                                    دو طرفه
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center justify-content-md-start mt-3">
+                        <div class="mt-md-1 col-11 col-md-6">
+                            <label for="start-time" class="form-label"> تاریخ رفت </label>
+                            <div class="position-relative">
+                                <input data-jdp id="start-time" class="form-control ltr text-start">
+                            </div>
+                        </div>
+                        <div id="return-time-container" class="mt-3 mt-md-1 col-11 col-md-6 visually-hidden">
+                            <label for="return-time" class="form-label"> تاریخ بازگشت </label>
+                            <div class="position-relative">
+                                <input data-jdp id="return-time" class="form-control ltr text-start">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center justify-content-md-start mt-3">
+                        <div class="mt-md-1 mt-md-1 col-11 col-md-6">
+                            <label for="passenger-count" class="form-label"> تعداد مسافران </label>
+                            <div class="d-flex flex-row" style="width: 120px">
+                                <button type="button" id="increase-passenger-count"
+                                        class="btn btn-primary btn-block rounded-0 rounded-start font-monospace">+
+                                </button>
+                                <input value="1" id="passenger-count" class="form-control rounded-0 text-center">
+                                <button type="button" id="decrease-passenger-count"
+                                        class="btn btn-primary btn-block rounded-0 rounded-end font-monospace">-
+                                </button>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="w-50 mx-2">
-                    <label for="to-input" class="form-label"> مقصد </label>
-                    <div id="to-input-container" class="position-relative">
-                        <input id="to-input" class="form-select" type="text"/>
-                    </div>
+                <button id="submit-button" class="mt-3 btn btn-primary disabled-btn ms-auto me-0" disabled>
+                    جست‌جوی بلیط
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="mt-3 mt-md-5">
+        <h3 class="h3"> تبلیغات </h3>
+        <div class="row mt-4 justify-content-center">
+            <div class="card border-0 m-3 shadow col-10 col-sm-8 col-md-4">
+                <div class="card-body position-relative px-0">
+                    <img src="../../flights/imgs/b.jpg" alt="commercial-img1" class="rounded mw-100 h-100"/>
+                    <span class="position-absolute text-light commercial-absolute-text">
+                            پرواز‌های پیشرفته
+                    </span>
                 </div>
+                <a class="btn btn-outline-primary border-0 mb-2"> مشاهده </a>
             </div>
-            <div class="d-flex mt-3">
-                <div class="w-50 mx-2">
-                    <label for="ticket-type" class="form-label"> نوع بلیط </label>
-                    <select id="ticket-type" class="form-select" aria-label="Default select example">
-                        <option value="1">
-                            یک طرفه
-                        </option>
-                        <option value="2">
-                            دو طرفه
-                        </option>
-                    </select>
+            <div class="card border-0 m-3 shadow col col-10 col-sm-8 col-md-4">
+                <div class="card-body position-relative px-0">
+                    <img src="../../flights/imgs/c.jpg" alt="commercial-img1" class="rounded mw-100 h-100"/>
+                    <span class="position-absolute text-light commercial-absolute-text">
+                            پرواز‌های تجاری
+                    </span>
                 </div>
+                <a class="btn btn-outline-primary border-0 mb-2"> مشاهده </a>
             </div>
-            <div class="d-flex flex-row mt-3">
-                <div class="w-50 mx-2">
-                    <label for="start-time" class="form-label"> تاریخ رفت </label>
-                    <div class="position-relative">
-                        <input data-jdp id="start-time" class="form-control ltr text-start">
-                    </div>
+            <div class="card border-0 m-3 shadow col col-10 col-sm-8 col-md-4">
+                <div class="card-body position-relative px-0">
+                    <img src="../../flights/imgs/airplane.jpg" alt="commercial-img1" class="rounded mw-100 h-100"/>
+                    <span class="position-absolute text-dark commercial-absolute-text">
+                            پرواز‌های سیاحتی
+                    </span>
                 </div>
-                <div id="return-time-container" class="w-50 mx-2 visually-hidden">
-                    <label for="return-time" class="form-label"> تاریخ بازگشت </label>
-                    <div class="position-relative">
-                        <input data-jdp id="return-time" class="form-control ltr text-start">
-                    </div>
-                </div>
+                <a class="btn btn-outline-primary border-0 mb-2"> مشاهده </a>
             </div>
-            <div class="d-flex flex-column mt-3">
-                <label for="passenger-count" class="form-label"> تعداد مسافران </label>
-                <div class="d-flex flex-row" style="width: 120px">
-                    <button type="button" id="increase-passenger-count"
-                            class="btn btn-primary btn-block rounded-0 rounded-start font-monospace">+
-                    </button>
-                    <input value="1" id="passenger-count" class="form-control rounded-0 text-center">
-                    <button type="button" id="decrease-passenger-count"
-                            class="btn btn-primary btn-block rounded-0 rounded-end font-monospace">-
-                    </button>
-                </div>
-            </div>
-            <button id="submit-button" class="mt-3 btn btn-primary disabled-btn" disabled>
-                جست‌جوی بلیط
-            </button>
-        </form>
+        </div>
     </div>
 </div>
+<footer class="py-3 shadow-lg">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 text-center">
+                <div class="d-flex flex-row justify-content-center align-items-center">
+                    <h5 class="h5 m-0 mt-1 pe-2"> شرکت هوایی MPE </h5>
+                    <img src="../../login/img/logo.jpg" class="rounded img-fluid" alt="logo" width="60px" height="60px">
+                </div>
+                <h5 class="h5 text-start">
+                    اعضا
+                </h5>
+                <ul class="list-group">
+                    <li class="list-group-item rounded-pill border-0 shadow-sm mt-2"> مریم عسگری نژاد - ۹۸۱۰۸۶۵۱</li>
+                    <li class="list-group-item rounded-pill border-0 shadow-sm mt-2"> احسان موفق - ۹۸۱۰۶۱۰۱</li>
+                    <li class="list-group-item rounded-pill border-0 shadow-sm mt-2"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
 </body>
 
 <script src="../../dist/bundle.js"></script>

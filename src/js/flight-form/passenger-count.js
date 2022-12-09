@@ -19,7 +19,12 @@ export function decreasePassengerCount() {
 
 export function passengerCountOnInput(e) {
     const value = e.target.value
-    if (!value || !isNumeric(value) || value == '0') {
+    if (!value || value == '0') {
+        e.target.value = 1
+        form.passengerCount = 1
+        return;
+    }
+    if (!isNumeric(value)) {
         e.target.value = form.passengerCount
         return
     }
