@@ -48,31 +48,35 @@ function book(str){
 
 let finalStr = "";
 function getInfo(){
-    if (num <= 3){
+    let passNum = +localStorage.getItem('CurrentPassengerNumber');
+    if (num <= passNum+1){
         let firstname = document.getElementById('firstname').value;
         let lastname = document.getElementById('lastname').value;
         let passportnumber = document.getElementById('passportnumber').value;
         let message = document.getElementById('infoNumber');
 
         if(!!firstname && !!lastname && !isNaN(passportnumber) && !isNaN(parseFloat(passportnumber))){
-            if(num==3){
+            if(num==passNum+1){
+
                 finalStr += ","+firstname+"-"+lastname;
                 finalStr = new Date() + finalStr;
                 book(finalStr);
                 window.location.href = 'userPanel.html';
+                console.log9('did')
             }
             else{
                 event.preventDefault();
                 event.stopPropagation();
                 
                 document.getElementById('infoNumber').innerHTML ="ورود اطلاعات مسافر " +num+":";
-                console.log(num)
+                console.log(1);
                 finalStr += ","+firstname+"-"+lastname;
             }
             
             num++;
         }
         else{
+            console.log(3);
             message.innerHTML = "تمام فیلدها را پر کنید";
         }
     }

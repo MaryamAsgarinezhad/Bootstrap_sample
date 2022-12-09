@@ -34,7 +34,6 @@
       //todo
       localStorage.setItem('BookingFlight',str);
       window.location.href = "bookpage.html";
-      console.log(str);
     }
   
     cell8.append(btn);
