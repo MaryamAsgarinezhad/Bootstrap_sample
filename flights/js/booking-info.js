@@ -29,21 +29,21 @@ const airports = [
         title: 'فرودگاه بین‌المللی تبریز',
         titleSmall: 'TA',
     },
-  ]
+]
 
   let depart = document.getElementById('depart');
   let airline = document.getElementById('Airline');
-  let currentFlight = localStorage.getItem('BookingFlight');
+  let currentFlight = JSON.parse(localStorage.getItem('BookingFlight'));
 
-  depart.innerHTML = airports[+currentFlight].country;
-  airline.innerHTML = airports[+currentFlight].city + "-" + airports[+currentFlight].title;
+  depart.innerHTML = "زمان حرکت : "+currentFlight.startFlightDateAndTime.substring(0,10);
+  airline.innerHTML = airports[currentFlight.fromAirportId-1].city + "-" + airports[currentFlight.toAirportId-1].city;
 
 let num=2;
 
 function book(str){
     let currentUser = localStorage.getItem('currentUser');
 
-    localStorage.setItem(currentUser+"-"+currentFlight,str);
+    localStorage.setItem(currentUser+"-"+currentFlight.id,str);
 }
 
 let finalStr = "";
@@ -59,7 +59,6 @@ function getInfo(){
                 finalStr += ","+firstname+"-"+lastname;
                 finalStr = new Date() + finalStr;
                 book(finalStr);
-                console.log('salam')
                 window.location.href = 'userPanel.html';
             }
             else{

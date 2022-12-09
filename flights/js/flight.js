@@ -1,40 +1,8 @@
-const airports = [
-    {
-        id: 1,
-        city: 'تهران',
-        country: 'ایران',
-        title: 'مهرآباد',
-        titleSmall: 'TE',
-    },
-    {
-        id: 2,
-        city: 'شیراز',
-        country: 'ایران',
-        title: 'فرودگاه بین‌المللی شیراز',
-        titleSmall: 'SHI',
-    },
-    {
-        id: 3,
-        city: 'مشهد',
-        country: 'ایران',
-        title: 'مشهد',
-        titleSmall: 'MA',
-    },
-    {
-        id: 4,
-        city: 'تبریز',
-        country: 'ایران',
-        title: 'فرودگاه بین‌المللی تبریز',
-        titleSmall: 'TA',
-    },
-  ]
-
   let table = document.getElementsByTagName('table')[0];
-  let filteredFlights = [1,3];
+  let filteredFlights = JSON.parse(localStorage.getItem('filteredFlights'));
 
   let i=0;
   for (const element of filteredFlights) {
-    let selectedFlight = airports[+element];
     let newRow = table.insertRow(1);
     newRow.align = "center";
   
@@ -48,18 +16,25 @@ const airports = [
     let cell8 = newRow.insertCell(7);
   
     //todo
-    cell1.innerHTML = selectedFlight.city;
-    cell5.innerHTML = selectedFlight.country;
+    cell1.innerHTML = element.airline;
+    cell2.innerHTML = element.startFlightDateAndTime;
+    cell3.innerHTML = element.arrivingDateAndTime;
+    cell4.innerHTML = element.flightInterval;
+    cell5.innerHTML = element.class;
+    cell6.innerHTML = element.price;
+
   
     let btn = document.createElement('Button');
     btn.id = i;
     btn.textContent = "خرید";
     btn.onclick = myFunction;
-  
+    let str = JSON.stringify(element);
+
     function myFunction() {
       //todo
-      localStorage.setItem('BookingFlight',element);
+      localStorage.setItem('BookingFlight',str);
       window.location.href = "bookpage.html";
+      console.log(str);
     }
   
     cell8.append(btn);
