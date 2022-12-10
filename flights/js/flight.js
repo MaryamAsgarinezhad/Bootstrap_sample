@@ -37,6 +37,7 @@
     btn.id = i;
     btn.textContent = "خرید";
     btn.onclick = myFunction;
+    btn.className = "mt-3 btn btn-primary disabled-btn ms-auto me-0";
     let str = JSON.stringify(element);
 
     function myFunction() {

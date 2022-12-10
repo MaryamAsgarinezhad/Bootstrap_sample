@@ -108,13 +108,20 @@
                     جست‌جوی بلیط
                 </button>
 
-                <button type="button" onclick="userPanel();" class="mt-3 btn btn-primary disabled-btn ms-auto me-0">
+                <button id="panelBtn" type="button" onclick="userPanel();" class="mt-3 btn btn-primary disabled-btn ms-auto me-0">
                     پنل کاربری
                 </button>
-
+                
             </form>
         </div>
     </div>
+
+    <script>
+        let v = !!localStorage.getItem('currentUser');
+        if(!v){
+            document.getElementById('panelBtn').style.visibility = "hidden";
+        }
+    </script>
 
     <div class="mt-3 mt-md-5">
         <h3 class="h3"> تبلیغات </h3>

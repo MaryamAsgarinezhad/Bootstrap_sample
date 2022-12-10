@@ -58,7 +58,7 @@ function getInfo(){
         if(!!firstname && !!lastname && !isNaN(passportnumber) && !isNaN(parseFloat(passportnumber))){
             if(num==passNum+1){
                 finalStr += ","+firstname+"-"+lastname;
-                finalStr = new Date() + finalStr;
+                finalStr = new Date().toLocaleDateString('fa-IR') + finalStr;
                 book(finalStr);
                 window.location.href = 'userPanel.html';
             }
