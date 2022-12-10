@@ -294,4 +294,8 @@ for (i=0 ; i<flights.length ; i++){
             cell8.innerHTML = myArray[j];
         }
     }
+
+    function mainPage(){
+        window.location.href = "../src/pages/index.html";
+    }
 }

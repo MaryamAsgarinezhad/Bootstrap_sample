@@ -68,6 +68,12 @@ function getInfo(){
                 
                 document.getElementById('infoNumber').innerHTML ="ورود اطلاعات مسافر " +num+":";
                 finalStr += ","+firstname+"-"+lastname;
+
+                document.getElementById('firstname').value = '';
+                document.getElementById('lastname').value = '';
+                document.getElementById('passportnumber').value = '';
+
+                alert("رزرو مسافر با موقفیت انجام شد.");
             }
             
             num++;

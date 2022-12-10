@@ -48,3 +48,7 @@
     cell8.append(btn);
     i++;
   }
+
+  function mainPage(){
+    window.location.href = "../src/pages/index.html";
+}
