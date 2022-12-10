@@ -13,6 +13,8 @@ function login() {
             if(obj.password == password.value){
                 message.innerHTML = "ورود موفق";
                 localStorage.setItem('currentUser',email.value);
+                window.location.href = "../src/pages/index.html";
+
             }
             else{
                 event.preventDefault();

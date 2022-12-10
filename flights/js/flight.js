@@ -40,10 +40,17 @@
     let str = JSON.stringify(element);
 
     function myFunction() {
-      //todo
+      
+    if (!!localStorage.getItem('currentUser')) {
       localStorage.setItem('BookingFlight',str);
       window.location.href = "bookpage.html";
+      }
+
+    else{
+      window.location.href = "../login/index.html";
+      }
     }
+    
   
     cell8.append(btn);
     i++;

@@ -11,6 +11,7 @@
     <link href="../static/css/font.css" rel="stylesheet">
     <link href="../static/css/jalalidatepicker.min.css" rel="stylesheet"/>
     <script src="../static/js/jalalidatepicker.min.js"></script>
+    <script src="../js/main-pannel.js"></script>
     <link href="../static/css/main.css" rel="stylesheet">
 </head>
 <body class="bg-dark">
@@ -20,7 +21,15 @@
             <h6 class="h6 m-0 mt-1 pe-2"> شرکت هوایی MPE </h6>
             <img src="../../login/img/logo.jpg" class="rounded img-fluid" alt="logo" width="60px" height="60px">
         </div>
-        <a class="btn btn-primary nav-item navbar-brand" href="../../login/index.html"> ثبت‌نام / ورود </a>
+        <a class="btn btn-primary nav-item navbar-brand" href="../../login/index.html" id="login-out"></a>
+
+        <script>
+            if(!!localStorage.getItem('currentUser')){
+                document.getElementById('login-out').innerHTML = "خوش آمدید " + localStorage.getItem('currentUser') + " ! خروج";
+            }else{
+                document.getElementById('login-out').innerHTML = "ثبت نام/ورود";
+            }
+        </script>
     </div>
 </nav>
 <div class="container mt-3">
@@ -98,9 +107,15 @@
                 <button id="submit-button" class="mt-3 btn btn-primary disabled-btn ms-auto me-0" disabled>
                     جست‌جوی بلیط
                 </button>
+
+                <button type="button" onclick="userPanel();" class="mt-3 btn btn-primary disabled-btn ms-auto me-0">
+                    پنل کاربری
+                </button>
+
             </form>
         </div>
     </div>
+
     <div class="mt-3 mt-md-5">
         <h3 class="h3"> تبلیغات </h3>
         <div class="row mt-4 justify-content-center">

@@ -22,6 +22,9 @@ function registerNewUser() {
         localStorage.setItem(userName, userJson);
         
         console.log(localStorage.getItem(userName));
+        localStorage.setItem('currentUser', email.value);
+
+        window.location.href = "../src/pages/index.html";
     }
     else{
         message.innerHTML = "تمام فیلدها را پر کنید";

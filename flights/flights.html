@@ -2,56 +2,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Availablity</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-  <link rel="stylesheet" type="text/css" href="css/flights.css">
-  <style>
-     body{
-       background-image: url("imgs/b.jpg");
-       background-repeat: no-repeat;
-       background-size: cover;
-    }
-  </style>
-  <!-- <link href="../login/css/bootstrap-dark.min.css" rel="stylesheet"> -->
+    <meta charset="UTF-8">
+    <title>پروازهای موجود</title>
+    <link href="../src/static/css/bootstrap.rtl.min.css" rel="stylesheet">
+    <link href="../src/static/css/bootstrap-dark.min.css" rel="stylesheet">
+    <link href="../src/static/css/bootstrap-utilities.rtl.min.css" rel="stylesheet">
+    <script src="../src/static/js/bootstrap.bundle.min.js"></script>
+    <link href="../src/static/css/font.css" rel="stylesheet">
+    <link href="../src/static/css/jalalidatepicker.min.css" rel="stylesheet"/>
+    <script src="../src/static/js/jalalidatepicker.min.js"></script>
+    <script src="../src/js/main-pannel.js"></script>
+    <link href="../src/static/css/main.css" rel="stylesheet">
 
 </head>
-	
-<body>
-<div class="container-fluid">
-  <div class="jumbotron jumbotron-fluid" id="s">
-      <center>
-        <p>پروازهای موجود</p>       
-      </center>
+<body class="bg-dark">
+	<body>
+  <div class="card mt-3 mt-md-5 shadow border-0 rounded-bottom rounded-3" dir="rtl">
+    <h4 class="card-header bg-primary bg-opacity-25 border-0 rounded-3">
+        سفارش بلیط
+    </h4>
+    <div class="card-body">
+        <form class="d-flex flex-column">
+            <div>
+                <div class="row justify-content-center">
+                    <div class="mt-1 col-11 col-md-6">
+                        <label for="from-input" class="form-label"> مبدا </label>
+                        <div id="from-input-container" class="position-relative">
+                            <input id="from-input" class="form-select" type="text"/>
+                        </div>
+                    </div>
+                    <div class="mt-3 mt-md-1 col-11 col-md-6">
+                        <label for="to-input" class="form-label"> مقصد </label>
+                        <div id="to-input-container" class="position-relative">
+                            <input id="to-input" class="form-select" type="text"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center justify-content-md-start mt-3">
+                    <div class="col-11 col-md-6">
+                        <label for="ticket-type" class="form-label"> نوع بلیط </label>
+                        <select id="ticket-type" class="form-select" aria-label="Default select example">
+                            <option value="1">
+                                یک طرفه
+                            </option>
+                            <option value="2">
+                                دو طرفه
+                            </option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row justify-content-center justify-content-md-start mt-3">
+                    <div class="mt-md-1 col-11 col-md-6">
+                        <label for="start-time" class="form-label"> تاریخ رفت </label>
+                        <div class="position-relative">
+                            <input data-jdp id="start-time" class="form-control ltr text-start">
+                        </div>
+                    </div>
+                    <div id="return-time-container" class="mt-3 mt-md-1 col-11 col-md-6 visually-hidden">
+                        <label for="return-time" class="form-label"> تاریخ بازگشت </label>
+                        <div class="position-relative">
+                            <input data-jdp id="return-time" class="form-control ltr text-start">
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center justify-content-md-start mt-3">
+                    <div class="mt-md-1 mt-md-1 col-11 col-md-6">
+                        <label for="passenger-count" class="form-label"> تعداد مسافران </label>
+                        <div class="d-flex flex-row" style="width: 120px">
+                            <button type="button" id="increase-passenger-count"
+                                    class="btn btn-primary btn-block rounded-0 rounded-start font-monospace">+
+                            </button>
+                            <input value="1" id="passenger-count" class="form-control rounded-0 text-center">
+                            <button type="button" id="decrease-passenger-count"
+                                    class="btn btn-primary btn-block rounded-0 rounded-end font-monospace">-
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button id="submit-button" class="mt-3 btn btn-primary disabled-btn ms-auto me-0" disabled>
+                جست‌جوی بلیط
+            </button>
+        </form>
+    </div>
   </div>
 </div>
-    
-<div class="container">
-  <table class="table" id="flightTable" dir="rtl" border="1">
-    <thead>
-      <tr>
-        <th>ایرلاین</th>
-        <th>ساعت پرواز</th>
-        <th>ساعت رسیدن</th>
-        <th>مدت زمان</th>
-        <th>رده پرواز</th>
-        <th>قیمت</th>
-        <th>پیام سرویس</th>
-        <th>رزرو</th>
-        <button onclick="mainPage();">
-          صفحه اصلی
-        </button> 
-      </tr>
-    </thead>
-  </table>
+<div dir="auto">
+  <div class="container-fluid">
+    <div class="jumbotron jumbotron-fluid" id="s">
+        <center>
+          <p><br></p>
+          <p>پروازهای موجود</p>       
+        </center>
+    </div>
+  </div>
+      
+  <div class="container">
+    <table class="table" id="flightTable" dir="rtl" border="1">
+      <thead>
+        <tr>
+          <th>ایرلاین</th>
+          <th>ساعت پرواز</th>
+          <th>ساعت رسیدن</th>
+          <th>مدت زمان</th>
+          <th>رده پرواز</th>
+          <th>قیمت</th>
+          <th>پیام سرویس</th>
+          <th>رزرو</th>
+          <button onclick="mainPage();">
+            صفحه اصلی
+          </button> 
+        </tr>
+      </thead>
+    </table>
+  </div>
 </div>
+
 <script src="js/flight.js"></script>
-
-
+<script src="../dist/bundle.js"></script>
 
 </body>
 
