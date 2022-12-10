@@ -7,17 +7,17 @@ const footer = document.querySelector('footer')
 
 if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
     body.classList.add('bg-dark')
-    footer.classList.add('bg-black')
+    footer?.classList.add('bg-black')
 
 
     body.classList.remove('bg-light')
-    footer.classList.remove('bg-white')
+    footer?.classList.remove('bg-white')
 } else {
     body.classList.add('bg-light')
-    footer.classList.add('bg-white')
+    footer?.classList.add('bg-white')
 
     body.classList.remove('bg-dark')
-    footer.classList.remove('bg-black')
+    footer?.classList.remove('bg-black')
 }
 
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', event => {
@@ -26,8 +26,8 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', eve
     body.classList.add(`bg-${newColorScheme[0]}`)
     body.classList.remove(`bg-${oldColorScheme[0]}`)
 
-    footer.classList.add(`bg-${newColorScheme[1]}`)
-    footer.classList.remove(`bg-${oldColorScheme[1]}`)
+    footer?.classList.add(`bg-${newColorScheme[1]}`)
+    footer?.classList.remove(`bg-${oldColorScheme[1]}`)
 });
 
 
