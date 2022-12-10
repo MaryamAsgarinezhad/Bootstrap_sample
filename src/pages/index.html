@@ -22,7 +22,9 @@
             <img src="../../login/img/logo.jpg" class="rounded img-fluid" alt="logo" width="60px" height="60px">
         </div>
         <a class="btn btn-primary nav-item navbar-brand" href="../../login/index.html" id="login-out"></a>
-
+        <button id="panelBtn" type="button" onclick="userPanel();" class="mt-3 btn btn-primary disabled-btn ms-auto me-0">
+            پنل کاربری
+        </button>
         <script>
             if(!!localStorage.getItem('currentUser')){
                 document.getElementById('login-out').innerHTML = "خوش آمدید " + localStorage.getItem('currentUser') + " ! خروج";
@@ -106,10 +108,6 @@
                 </div>
                 <button id="submit-button" class="mt-3 btn btn-primary disabled-btn ms-auto me-0" disabled>
                     جست‌جوی بلیط
-                </button>
-
-                <button id="panelBtn" type="button" onclick="userPanel();" class="mt-3 btn btn-primary disabled-btn ms-auto me-0">
-                    پنل کاربری
                 </button>
                 
             </form>
